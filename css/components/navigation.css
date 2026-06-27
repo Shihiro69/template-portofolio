@@ -1,0 +1,70 @@
+/* ============================================================
+   COMPONENT — Navigation UX
+   Sprint 7: UX Enhancements
+   ============================================================ */
+
+/* ── Active navigation link ── */
+.c-nav__link.is-active {
+  color: var(--color-primary-light);
+  background: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.1);
+}
+
+/* ── Animated hamburger icon ── */
+.c-nav-toggle {
+  position: relative;
+  flex-direction: column;
+  gap: 5px;
+  display: none;
+}
+
+.c-nav-toggle__line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-text-primary);
+  border-radius: var(--radius-full);
+  transition: transform var(--duration-normal) var(--ease-default),
+              opacity var(--duration-fast) var(--ease-default);
+  transform-origin: center;
+}
+
+/* Hamburger → X animation */
+.c-nav-toggle.is-active .c-nav-toggle__line--top {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.c-nav-toggle.is-active .c-nav-toggle__line--middle {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.c-nav-toggle.is-active .c-nav-toggle__line--bottom {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile nav list animation ── */
+.c-nav__list {
+  transition: opacity var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+
+.c-nav__list.is-open {
+  display: flex;
+  animation: navSlideIn var(--duration-normal) var(--ease-out) forwards;
+}
+
+@keyframes navSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Sticky header shadow on scroll ── */
+#site-header.is-scrolled {
+  box-shadow: var(--shadow-navbar);
+}

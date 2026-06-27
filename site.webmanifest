@@ -1,0 +1,17 @@
+{
+  "name": "Alex Rivera — Front-End Engineer & UI Architect",
+  "short_name": "Alex Rivera",
+  "description": "Portfolio of Alex Rivera, specializing in design systems, accessible UI, and performant web applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1a1b26",
+  "background_color": "#15161f",
+  "icons": [
+    {
+      "src": "/assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

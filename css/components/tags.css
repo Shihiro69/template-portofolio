@@ -1,0 +1,93 @@
+/* ============================================================
+   COMPONENT — Tag
+   Sprint 5: Reusable Components
+   ============================================================
+   Class: .c-tag
+   Desc:  Categorization and metadata label. Non-interactive,
+          used for grouping/filtering content by type.
+   ============================================================ */
+
+/* ── Base Tag ── */
+.c-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-0-5) var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-tight);
+  white-space: nowrap;
+  border-radius: var(--radius-sm);
+  background: var(--color-background-alt);
+  color: var(--color-text-secondary);
+  border: var(--border-thin) solid var(--color-surface-border);
+}
+
+/* ── Tag with Icon ── */
+.c-tag__icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ── Tag with Count ── */
+.c-tag__count {
+  margin-left: var(--space-1);
+  padding: 0 var(--space-1);
+  font-size: 0.6875rem;
+  font-weight: var(--weight-semibold);
+  background: var(--color-surface);
+  border-radius: var(--radius-full);
+  color: var(--color-text-tertiary);
+}
+
+/* ── Color Variants ── */
+.c-tag--primary {
+  background: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.1);
+  color: var(--color-primary-light);
+  border-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.25);
+}
+
+.c-tag--secondary {
+  background: hsla(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l), 0.1);
+  color: var(--color-secondary-light);
+  border-color: hsla(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l), 0.25);
+}
+
+.c-tag--accent {
+  background: hsla(var(--color-accent-h), var(--color-accent-s), var(--color-accent-l), 0.1);
+  color: var(--color-accent-light);
+  border-color: hsla(var(--color-accent-h), var(--color-accent-s), var(--color-accent-l), 0.25);
+}
+
+.c-tag--success {
+  background: var(--color-success-bg);
+  color: var(--color-success-light);
+  border-color: hsla(150, 70%, 48%, 0.25);
+}
+
+.c-tag--warning {
+  background: var(--color-warning-bg);
+  color: var(--color-warning-light);
+  border-color: hsla(40, 95%, 55%, 0.25);
+}
+
+.c-tag--error {
+  background: var(--color-error-bg);
+  color: var(--color-error-light);
+  border-color: hsla(0, 75%, 58%, 0.25);
+}
+
+.c-tag--info {
+  background: var(--color-info-bg);
+  color: var(--color-info-light);
+  border-color: hsla(210, 75%, 55%, 0.25);
+}
+
+/* ── Tag Group (horizontal wrapping container) ── */
+.c-tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1-5);
+}

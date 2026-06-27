@@ -1,0 +1,41 @@
+/* ============================================================
+   LAYOUT — Footer
+   Sprint 6: Portfolio Sections
+   ============================================================ */
+
+#site-footer {
+  background: var(--color-background-alt);
+  border-top: var(--border-thin) solid var(--color-surface-border);
+}
+
+.l-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding: var(--space-6) var(--container-padding);
+}
+
+#footer-copyright {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+#footer-links {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.c-footer__link {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.c-footer__link:hover {
+  color: var(--color-primary-light);
+}

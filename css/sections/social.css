@@ -1,0 +1,48 @@
+/* ============================================================
+   SECTION — Social
+   Sprint 6: Portfolio Sections
+   ============================================================ */
+
+#section-social {
+  background: var(--color-background);
+}
+
+.social__intro {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: var(--container-text);
+  margin-inline: auto;
+}
+
+/* ── Grid ── */
+.social__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: var(--space-4);
+}
+
+/* ── Social link card ── */
+.social__link {
+  text-align: center;
+  transition: var(--transition-card-hover);
+}
+
+.social__link .c-card__body {
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+
+.social__platform {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.social__username {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}

@@ -1,0 +1,32 @@
+/* ============================================================
+   COMPONENT — Scroll Progress Bar
+   Sprint 7: UX Enhancements
+   ============================================================ */
+
+.c-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: var(--z-max);
+  background: transparent;
+  pointer-events: none;
+}
+
+.c-scroll-progress__fill {
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transform-origin: left;
+  transform: scaleX(0);
+  will-change: transform;
+  transition: transform 50ms linear;
+}
+
+/* Ensure it sits above the sticky header */
+@supports (animation-timeline: scroll()) {
+  .c-scroll-progress {
+    animation-timeline: scroll();
+  }
+}

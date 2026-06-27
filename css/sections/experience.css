@@ -1,0 +1,152 @@
+/* ============================================================
+   SECTION — Experience
+   Sprint 6: Portfolio Sections
+   ============================================================ */
+
+#section-experience {
+  background: var(--color-background);
+}
+
+/* ── Timeline ── */
+.experience__timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0);
+}
+
+/* Vertical line */
+.experience__timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--color-surface-border);
+  border-radius: var(--radius-full);
+}
+
+/* ── Entry ── */
+.experience__entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: var(--space-6);
+  padding-bottom: var(--space-8);
+}
+
+.experience__entry:last-child {
+  padding-bottom: 0;
+}
+
+/* ── Marker ── */
+.experience__marker {
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.experience__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  border: 3px solid var(--color-background);
+  box-shadow: 0 0 0 2px var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ── Body ── */
+.experience__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.experience__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.experience__role {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+}
+
+.experience__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.experience__company {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary-light);
+}
+
+a.experience__company:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.experience__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+.experience__period,
+.experience__location {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.experience__description {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Highlights ── */
+.experience__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.experience__highlight {
+  position: relative;
+  padding-left: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.experience__highlight::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+}
+
+/* ── Tech tags ── */
+.experience__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1-5);
+  padding-top: var(--space-1);
+}

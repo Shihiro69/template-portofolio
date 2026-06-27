@@ -1,0 +1,393 @@
+/* ============================================================
+   DESIGN SYSTEM — CSS Custom Properties
+   Sprint 1: Complete Design Token Set
+   ============================================================
+   Layer: base/variables.css
+   Purpose: Single source of truth for ALL design tokens.
+            All other stylesheets reference these variables.
+   ============================================================ */
+
+/* ============================================================
+   1. COLOR PALETTE
+   ============================================================ */
+:root {
+  /* ── Primary (Indigo / Deep Blue) ── */
+  --color-primary-h: 240;
+  --color-primary-s: 80%;
+  --color-primary-l: 60%;
+  --color-primary:              hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  --color-primary-light:        hsl(var(--color-primary-h), var(--color-primary-s), 70%);
+  --color-primary-lighter:      hsl(var(--color-primary-h), var(--color-primary-s), 85%);
+  --color-primary-dark:         hsl(var(--color-primary-h), var(--color-primary-s), 45%);
+  --color-primary-darker:       hsl(var(--color-primary-h), var(--color-primary-s), 30%);
+  --color-primary-contrast:     hsl(var(--color-primary-h), 10%, 98%);
+
+  /* ── Secondary (Teal / Cyan) ── */
+  --color-secondary-h: 175;
+  --color-secondary-s: 70%;
+  --color-secondary-l: 48%;
+  --color-secondary:            hsl(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l));
+  --color-secondary-light:      hsl(var(--color-secondary-h), var(--color-secondary-s), 62%);
+  --color-secondary-lighter:    hsl(var(--color-secondary-h), var(--color-secondary-s), 82%);
+  --color-secondary-dark:       hsl(var(--color-secondary-h), var(--color-secondary-s), 35%);
+  --color-secondary-darker:     hsl(var(--color-secondary-h), var(--color-secondary-s), 22%);
+  --color-secondary-contrast:   hsl(var(--color-secondary-h), 10%, 98%);
+
+  /* ── Accent (Amber / Warm Gold) ── */
+  --color-accent-h: 40;
+  --color-accent-s: 95%;
+  --color-accent-l: 55%;
+  --color-accent:               hsl(var(--color-accent-h), var(--color-accent-s), var(--color-accent-l));
+  --color-accent-light:         hsl(var(--color-accent-h), var(--color-accent-s), 68%);
+  --color-accent-lighter:       hsl(var(--color-accent-h), var(--color-accent-s), 85%);
+  --color-accent-dark:          hsl(var(--color-accent-h), var(--color-accent-s), 42%);
+  --color-accent-contrast:      hsl(var(--color-accent-h), 15%, 10%);
+
+  /* ── Background (Dark Theme — default) ── */
+  --color-background-h: 235;
+  --color-background-s: 25%;
+  --color-background-l: 8%;
+  --color-background:           hsl(var(--color-background-h), var(--color-background-s), var(--color-background-l));
+  --color-background-alt:       hsl(var(--color-background-h), var(--color-background-s), 11%);
+  --color-background-raised:    hsl(var(--color-background-h), var(--color-background-s), 14%);
+
+  /* ── Surface (Cards, Panels, Modals) ── */
+  --color-surface-h: 235;
+  --color-surface-s: 20%;
+  --color-surface-l: 14%;
+  --color-surface:              hsl(var(--color-surface-h), var(--color-surface-s), var(--color-surface-l));
+  --color-surface-hover:        hsl(var(--color-surface-h), var(--color-surface-s), 20%);
+  --color-surface-elevated:     hsl(var(--color-surface-h), var(--color-surface-s), 24%);
+  --color-surface-border:       hsl(var(--color-surface-h), var(--color-surface-s), 30%);
+
+  /* ── Text ── */
+  --color-text-h: 230;
+  --color-text-s: 15%;
+  --color-text-primary-l: 92%;
+  --color-text-primary:         hsl(var(--color-text-h), var(--color-text-s), var(--color-text-primary-l));
+  --color-text-secondary:       hsl(var(--color-text-h), var(--color-text-s), 68%);
+  --color-text-tertiary:        hsl(var(--color-text-h), var(--color-text-s), 48%);
+  --color-text-disabled:        hsl(var(--color-text-h), var(--color-text-s), 32%);
+  --color-text-inverse:         hsl(var(--color-text-h), 5%, 12%);
+  --color-text-link:            var(--color-primary-light);
+  --color-text-link-hover:      var(--color-primary);
+
+  /* ── Semantic Colors ── */
+  --color-success:              hsl(150, 70%, 48%);
+  --color-success-light:        hsl(150, 70%, 65%);
+  --color-success-dark:         hsl(150, 70%, 32%);
+  --color-success-bg:           hsla(150, 70%, 48%, 0.12);
+
+  --color-warning:              hsl(40, 95%, 55%);
+  --color-warning-light:        hsl(40, 95%, 70%);
+  --color-warning-dark:         hsl(40, 95%, 40%);
+  --color-warning-bg:           hsla(40, 95%, 55%, 0.12);
+
+  --color-error:                hsl(0, 75%, 58%);
+  --color-error-light:          hsl(0, 75%, 72%);
+  --color-error-dark:           hsl(0, 75%, 42%);
+  --color-error-bg:             hsla(0, 75%, 58%, 0.12);
+
+  --color-info:                 hsl(210, 75%, 55%);
+  --color-info-light:           hsl(210, 75%, 70%);
+  --color-info-dark:            hsl(210, 75%, 38%);
+  --color-info-bg:              hsla(210, 75%, 55%, 0.12);
+
+  /* ── Gradients ── */
+  --gradient-primary:           linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient-primary-reverse:   linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  --gradient-accent:            linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  --gradient-surface:           linear-gradient(180deg, var(--color-surface-elevated), var(--color-surface));
+  --gradient-hero:              linear-gradient(160deg, var(--color-background-alt) 0%, var(--color-background) 40%, var(--color-primary-darker) 100%);
+
+  /* ── Overlay ── */
+  --color-overlay:              hsla(var(--color-background-h), var(--color-background-s), 5%, 0.65);
+  --color-overlay-light:        hsla(var(--color-background-h), var(--color-background-s), 5%, 0.35);
+}
+
+/* ============================================================
+   2. TYPOGRAPHY SCALE
+   ============================================================ */
+:root {
+  /* ── Font Families ── */
+  --font-sans:      "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-mono:      "JetBrains Mono", "Fira Code", "Cascadia Code", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  --font-display:   "Outfit", var(--font-sans);
+
+  /* ── Font Size Scale (1.250 — Major Third) ── */
+  --text-xs:        0.75rem;     /* 12px */
+  --text-sm:        0.875rem;    /* 14px */
+  --text-base:      1rem;        /* 16px */
+  --text-md:        1.125rem;    /* 18px */
+  --text-lg:        1.25rem;     /* 20px */
+  --text-xl:        1.5rem;      /* 24px */
+  --text-2xl:       1.875rem;    /* 30px */
+  --text-3xl:       2.25rem;     /* 36px */
+  --text-4xl:       3rem;        /* 48px */
+  --text-5xl:       3.75rem;     /* 60px */
+  --text-6xl:       4.5rem;      /* 72px */
+
+  /* ── Font Size Scale (Clamp-responsive for headings) ── */
+  --text-fluid-xs:  clamp(0.75rem, 1.5vw, 0.875rem);
+  --text-fluid-sm:  clamp(0.875rem, 2vw, 1rem);
+  --text-fluid-base: clamp(1rem, 2.5vw, 1.125rem);
+  --text-fluid-lg:  clamp(1.125rem, 3vw, 1.5rem);
+  --text-fluid-xl:  clamp(1.5rem, 4vw, 2.25rem);
+  --text-fluid-2xl: clamp(1.875rem, 5vw, 3rem);
+  --text-fluid-3xl: clamp(2.25rem, 6vw, 3.75rem);
+  --text-fluid-4xl: clamp(3rem, 8vw, 4.5rem);
+
+  /* ── Line Heights ── */
+  --leading-tight:   1.15;
+  --leading-snug:    1.35;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.75;
+  --leading-loose:   2;
+
+  /* ── Letter Spacing ── */
+  --tracking-tighter: -0.05em;
+  --tracking-tight:   -0.025em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.025em;
+  --tracking-wider:   0.05em;
+  --tracking-widest:  0.1em;
+}
+
+/* ============================================================
+   3. FONT WEIGHT SCALE
+   ============================================================ */
+:root {
+  --weight-thin:       100;
+  --weight-extralight: 200;
+  --weight-light:      300;
+  --weight-normal:     400;
+  --weight-medium:     500;
+  --weight-semibold:   600;
+  --weight-bold:       700;
+  --weight-extrabold:  800;
+  --weight-black:      900;
+}
+
+/* ============================================================
+   4. SPACING SYSTEM (8px base — 0.5rem increments)
+   ============================================================ */
+:root {
+  --space-0:    0;
+  --space-px:   1px;
+  --space-0-5:  0.125rem;   /* 2px  */
+  --space-1:    0.25rem;    /* 4px  */
+  --space-1-5:  0.375rem;   /* 6px  */
+  --space-2:    0.5rem;     /* 8px  */
+  --space-2-5:  0.625rem;   /* 10px */
+  --space-3:    0.75rem;    /* 12px */
+  --space-3-5:  0.875rem;   /* 14px */
+  --space-4:    1rem;       /* 16px */
+  --space-5:    1.25rem;    /* 20px */
+  --space-6:    1.5rem;     /* 24px */
+  --space-7:    1.75rem;    /* 28px */
+  --space-8:    2rem;       /* 32px */
+  --space-9:    2.25rem;    /* 36px */
+  --space-10:   2.5rem;     /* 40px */
+  --space-11:   2.75rem;    /* 44px */
+  --space-12:   3rem;       /* 48px */
+  --space-14:   3.5rem;     /* 56px */
+  --space-16:   4rem;       /* 64px */
+  --space-20:   5rem;       /* 80px */
+  --space-24:   6rem;       /* 96px */
+  --space-28:   7rem;       /* 112px */
+  --space-32:   8rem;       /* 128px */
+  --space-36:   9rem;       /* 144px */
+  --space-40:   10rem;      /* 160px */
+
+  /* ── Section Spacing ── */
+  --section-padding-y:    var(--space-24);
+  --section-padding-y-sm: var(--space-16);
+  --section-gap:          var(--space-20);
+
+  /* ── Content Padding ── */
+  --content-padding-x: var(--space-6);
+}
+
+/* ============================================================
+   5. BORDER RADIUS SYSTEM
+   ============================================================ */
+:root {
+  --radius-none:   0;
+  --radius-xs:     0.125rem;   /* 2px  */
+  --radius-sm:     0.25rem;    /* 4px  */
+  --radius-md:     0.375rem;   /* 6px  */
+  --radius-base:   0.5rem;     /* 8px  */
+  --radius-lg:     0.75rem;    /* 12px */
+  --radius-xl:     1rem;       /* 16px */
+  --radius-2xl:    1.5rem;     /* 24px */
+  --radius-3xl:    2rem;       /* 32px */
+  --radius-full:   9999px;
+
+  /* ── Semantic Radii ── */
+  --radius-button:   var(--radius-base);
+  --radius-card:     var(--radius-lg);
+  --radius-input:    var(--radius-base);
+  --radius-badge:    var(--radius-full);
+  --radius-modal:    var(--radius-xl);
+  --radius-avatar:   var(--radius-full);
+  --radius-tooltip:  var(--radius-md);
+}
+
+/* ============================================================
+   6. SHADOW SYSTEM
+   ============================================================ */
+:root {
+  /* ── Elevation Scale ── */
+  --shadow-xs:   0 1px 2px hsla(0, 0%, 0%, 0.35);
+  --shadow-sm:   0 1px 3px hsla(0, 0%, 0%, 0.35), 0 2px 6px hsla(0, 0%, 0%, 0.2);
+  --shadow-md:   0 4px 8px hsla(0, 0%, 0%, 0.3), 0 2px 6px hsla(0, 0%, 0%, 0.2);
+  --shadow-lg:   0 8px 16px hsla(0, 0%, 0%, 0.35), 0 4px 8px hsla(0, 0%, 0%, 0.25);
+  --shadow-xl:   0 12px 24px hsla(0, 0%, 0%, 0.4), 0 6px 12px hsla(0, 0%, 0%, 0.3);
+  --shadow-2xl:  0 20px 40px hsla(0, 0%, 0%, 0.5), 0 8px 16px hsla(0, 0%, 0%, 0.35);
+
+  /* ── Colored / Glow Shadows ── */
+  --shadow-glow-primary:   0 0 20px hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.35);
+  --shadow-glow-secondary: 0 0 20px hsla(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l), 0.3);
+  --shadow-glow-accent:    0 0 20px hsla(var(--color-accent-h), var(--color-accent-s), var(--color-accent-l), 0.3);
+  --shadow-glow-subtle:    0 0 12px hsla(var(--color-primary-h), var(--color-primary-s), 65%, 0.15);
+
+  /* ── Semantic Shadows ── */
+  --shadow-card:         var(--shadow-md);
+  --shadow-card-hover:   var(--shadow-lg), var(--shadow-glow-subtle);
+  --shadow-button:       var(--shadow-sm);
+  --shadow-button-hover: var(--shadow-md), var(--shadow-glow-primary);
+  --shadow-modal:        var(--shadow-2xl);
+  --shadow-dropdown:     var(--shadow-lg);
+  --shadow-navbar:       var(--shadow-sm);
+  --shadow-hero:         inset 0 -80px 60px -40px hsla(0, 0%, 0%, 0.4);
+}
+
+/* ============================================================
+   7. TRANSITION SYSTEM
+   ============================================================ */
+:root {
+  /* ── Duration Tokens ── */
+  --duration-instant:   0ms;
+  --duration-fast:      150ms;
+  --duration-normal:    250ms;
+  --duration-slow:      400ms;
+  --duration-slower:    600ms;
+  --duration-slowest:   900ms;
+
+  /* ── Easing Curves ── */
+  --ease-linear:        linear;
+  --ease-default:       cubic-bezier(0.4, 0, 0.2, 1);        /* Material standard */
+  --ease-in:            cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:           cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out:        cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring:        cubic-bezier(0.34, 1.56, 0.64, 1);   /* Overshoot */
+  --ease-bounce:        cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  --ease-smooth:        cubic-bezier(0.65, 0, 0.35, 1);      /* Custom smooth */
+
+  /* ── Semantic Transitions ── */
+  --transition-color:          color var(--duration-fast) var(--ease-default);
+  --transition-background:     background-color var(--duration-normal) var(--ease-default);
+  --transition-opacity:        opacity var(--duration-normal) var(--ease-default);
+  --transition-transform:      transform var(--duration-normal) var(--ease-default);
+  --transition-shadow:         box-shadow var(--duration-normal) var(--ease-default);
+  --transition-border:         border-color var(--duration-fast) var(--ease-default);
+  --transition-all:            all var(--duration-normal) var(--ease-default);
+  --transition-all-slow:       all var(--duration-slow) var(--ease-default);
+
+  /* ── Composite Transitions ── */
+  --transition-card-hover:     transform var(--duration-normal) var(--ease-spring),
+                               box-shadow var(--duration-normal) var(--ease-default);
+
+  --transition-button:         background-color var(--duration-fast) var(--ease-default),
+                               transform var(--duration-fast) var(--ease-default),
+                               box-shadow var(--duration-fast) var(--ease-default);
+
+  --transition-nav-link:       color var(--duration-fast) var(--ease-default),
+                               background-color var(--duration-fast) var(--ease-default);
+
+  --transition-modal:          opacity var(--duration-normal) var(--ease-out),
+                               transform var(--duration-normal) var(--ease-spring);
+
+  /* ── Reduced Motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    --duration-fast:     0ms;
+    --duration-normal:   0ms;
+    --duration-slow:     0ms;
+    --duration-slower:   0ms;
+    --duration-slowest:  0ms;
+    --ease-spring:       linear;
+    --ease-bounce:       linear;
+  }
+}
+
+/* ============================================================
+   8. CONTAINER WIDTHS
+   ============================================================ */
+:root {
+  --container-xs:    480px;
+  --container-sm:    640px;
+  --container-md:    768px;
+  --container-lg:    1024px;
+  --container-xl:    1200px;
+  --container-2xl:   1400px;
+  --container-full:  100%;
+
+  /* ── Semantic Containers ── */
+  --container-text:      var(--container-md);     /* For long-form text */
+  --container-content:   var(--container-lg);     /* For general content */
+  --container-section:   var(--container-xl);     /* For full sections */
+  --container-wide:      var(--container-2xl);    /* For wide layouts */
+
+  /* ── Container Padding ── */
+  --container-padding:   var(--space-6);
+}
+
+/* ============================================================
+   9. RESPONSIVE BREAKPOINTS (Mobile-First)
+   ============================================================ */
+:root {
+  /* ── Breakpoint Values (used in media queries) ── */
+  --bp-xs:    375px;    /* Small phones        */
+  --bp-sm:    480px;    /* Large phones        */
+  --bp-md:    768px;    /* Tablets             */
+  --bp-lg:    1024px;   /* Small desktops      */
+  --bp-xl:    1200px;   /* Standard desktops   */
+  --bp-2xl:   1400px;   /* Large desktops      */
+  --bp-3xl:   1600px;   /* Extra large screens */
+
+  /* ── Breakpoint Ranges (documentation reference) ── */
+  /* Mobile:          0   — 767px   */
+  /* Tablet:          768px — 1023px */
+  /* Desktop:         1024px — 1399px */
+  /* Wide:            1400px+       */
+}
+
+/* ============================================================
+   10. Z-INDEX SCALE
+   ============================================================ */
+:root {
+  --z-base:        1;
+  --z-dropdown:    100;
+  --z-sticky:      200;
+  --z-navbar:      300;
+  --z-overlay:     400;
+  --z-modal:       500;
+  --z-toast:       600;
+  --z-tooltip:     700;
+  --z-max:         9999;
+}
+
+/* ============================================================
+   11. BORDER WIDTHS
+   ============================================================ */
+:root {
+  --border-none:   0;
+  --border-thin:   1px;
+  --border-normal: 2px;
+  --border-thick:  3px;
+  --border-heavy:  4px;
+}
+
+/* ============================================================
+   END SPRINT 1 — Design System Complete
+   ============================================================ */

@@ -1,0 +1,104 @@
+/* ============================================================
+   SECTION — Hero
+   Sprint 6: Portfolio Sections
+   ============================================================ */
+
+#section-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--gradient-hero);
+  overflow: hidden;
+}
+
+/* ── Hero content layout: 2 columns ── */
+#section-hero .hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+}
+
+/* ── Text Column ── */
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.hero__heading {
+  font-size: var(--text-fluid-4xl);
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero__role {
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary-light);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.hero__tagline {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 36rem;
+}
+
+/* ── CTA Actions ── */
+.hero__actions {
+  display: flex;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+/* ── Stats ── */
+.hero__stats {
+  display: flex;
+  gap: var(--space-8);
+  padding-top: var(--space-4);
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.hero__stat-value {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary-light);
+}
+
+.hero__stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* ── Image Column ── */
+.hero__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__image img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-glow-primary);
+  border: var(--border-thin) solid hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.25);
+}

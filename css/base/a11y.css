@@ -1,0 +1,129 @@
+/* ============================================================
+   ACCESSIBILITY UTILITIES
+   Sprint 9: Accessibility & SEO Optimization
+   ============================================================ */
+
+/* ── Screen Reader Only ── */
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Screen Reader Only (focusable) — skip navigation ── */
+.u-sr-only--focusable:not(:focus):not(:focus-visible) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.u-sr-only--focusable:focus,
+.u-sr-only--focusable:focus-visible {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: var(--z-max);
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-base);
+  text-decoration: none;
+  outline: 2px solid var(--color-background);
+}
+
+/* ── Focus visible (global, refined) ── */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Reduced motion: disable all transitions ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── High contrast mode support ── */
+@media (forced-colors: active) {
+  .c-btn,
+  .c-badge,
+  .c-chip,
+  .c-tag,
+  .c-card {
+    border: 1px solid ButtonText;
+  }
+
+  .c-btn--primary {
+    background: Highlight;
+    color: HighlightText;
+  }
+
+  .skills__bar-fill,
+  .c-scroll-progress__fill {
+    background: Highlight;
+  }
+}
+
+/* ── Print styles ── */
+@media print {
+  #section-hero {
+    min-height: auto;
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+    background: none !important;
+  }
+
+  #site-header,
+  #nav-toggle,
+  .c-scroll-progress,
+  .hero__actions,
+  .hero__stats {
+    display: none !important;
+  }
+
+  .hero__heading {
+    -webkit-text-fill-color: initial;
+    background: none;
+    color: #000;
+  }
+
+  .l-section {
+    max-width: 100%;
+    padding: var(--space-4) 0;
+    page-break-inside: avoid;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}

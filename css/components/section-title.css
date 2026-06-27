@@ -1,0 +1,84 @@
+/* ============================================================
+   COMPONENT — Section Title
+   Sprint 5: Reusable Components
+   ============================================================
+   Class: .section__heading
+   Desc:  Consistent, styled section heading. Used as the
+          heading element inside every portfolio section.
+          Supports subtitle, decoration line, and alignment.
+   ============================================================ */
+
+/* ── Base Section Heading ── */
+.section__heading {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: var(--text-fluid-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-4);
+}
+
+/* ── Decorative underline (default) ── */
+.section__heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--duration-slow) var(--ease-spring);
+}
+
+/* ── Heading with Subtitle ── */
+.section__heading--with-subtitle {
+  margin-bottom: var(--space-2);
+  padding-bottom: var(--space-3);
+}
+
+.section__subtitle {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  font-weight: var(--weight-normal);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: var(--container-text);
+  margin-bottom: var(--space-8);
+}
+
+/* ── Alignment: Center ── */
+.section__heading--center {
+  text-align: center;
+}
+
+.section__heading--center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section__heading--center + .section__subtitle,
+.section__heading--with-subtitle + .section__subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Decoration: Wide underline ── */
+.section__heading--wide::after {
+  width: 5rem;
+}
+
+/* ── Decoration: Accent color underline ── */
+.section__heading--accent::after {
+  background: var(--gradient-accent);
+}
+
+/* ── Section Heading group (heading + subtitle as a unit) ── */
+.section__heading-group {
+  margin-bottom: var(--space-8);
+}

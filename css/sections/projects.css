@@ -1,0 +1,22 @@
+/* ============================================================
+   SECTION — Projects
+   Sprint 6: Portfolio Sections
+   ============================================================ */
+
+#section-projects {
+  background: var(--color-background-alt);
+}
+
+/* ── Intro text ── */
+.projects__intro {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  max-width: var(--container-text);
+}
+
+/* ── Card grid ── */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
+  gap: var(--space-6);
+}

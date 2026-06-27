@@ -1,0 +1,64 @@
+/* ============================================================
+   SECTION — Education
+   Sprint 6: Portfolio Sections
+   ============================================================ */
+
+#section-education {
+  background: var(--color-background-alt);
+}
+
+.education__card {
+  max-width: var(--container-text);
+}
+
+/* ── Meta ── */
+.education__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.education__institution {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary-light);
+}
+
+.education__location {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* ── Details (badges row) ── */
+.education__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1-5);
+}
+
+/* ── Achievements list ── */
+.education__achievements {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.education__achievement {
+  position: relative;
+  padding-left: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.education__achievement::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+}

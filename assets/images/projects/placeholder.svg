@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <rect width="320" height="200" rx="8" fill="#1e1f2e"/>
+  <rect x="8" y="8" width="304" height="184" rx="4" fill="#2a2b3e" stroke="#3a3b52" stroke-width="1"/>
+  <text x="160" y="94" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#6366f1">Project</text>
+  <text x="160" y="114" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#4a4b6e">Screenshot</text>
+</svg>

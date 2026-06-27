@@ -1,0 +1,157 @@
+/* ============================================================
+   COMPONENT — Card
+   Sprint 5: Reusable Components
+   ============================================================
+   Class: .c-card
+   Desc:  A surface container for grouping related content.
+          Supports image header, body, footer, and variants.
+   ============================================================ */
+
+/* ── Base Card ── */
+.c-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: var(--border-thin) solid var(--color-surface-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: var(--transition-card-hover);
+}
+
+.c-card:hover {
+  background: var(--color-surface-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+/* ── Card Image ── */
+.c-card__image {
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-background-alt);
+}
+
+.c-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-smooth);
+}
+
+.c-card:hover .c-card__image img {
+  transform: scale(1.04);
+}
+
+/* Image aspect ratios */
+.c-card__image--ratio-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.c-card__image--ratio-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.c-card__image--ratio-1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+/* ── Card Body ── */
+.c-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  flex: 1;
+}
+
+/* ── Card Title ── */
+.c-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-snug);
+}
+
+/* ── Card Text ── */
+.c-card__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Card Tags ── */
+.c-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1-5);
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+/* ── Card Links ── */
+.c-card__links {
+  display: flex;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  margin-top: auto;
+}
+
+/* ── Card Variant: Flat (no border, no shadow) ── */
+.c-card--flat {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.c-card--flat:hover {
+  background: var(--color-background-alt);
+  box-shadow: none;
+  transform: none;
+}
+
+/* ── Card Variant: Elevated ── */
+.c-card--elevated {
+  background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.c-card--elevated:hover {
+  box-shadow: var(--shadow-xl), var(--shadow-glow-subtle);
+}
+
+/* ── Card Variant: Interactive (clickable card) ── */
+a.c-card,
+button.c-card {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.c-card:focus-visible,
+button.c-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── Card Variant: Bordered (border only, transparent bg) ── */
+.c-card--bordered {
+  background: transparent;
+  border: var(--border-thin) solid var(--color-surface-border);
+}
+
+.c-card--bordered:hover {
+  border-color: var(--color-primary);
+  background: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.06);
+}
+
+/* ── Card Variant: Compact ── */
+.c-card--compact .c-card__body {
+  padding: var(--space-3);
+  gap: var(--space-2);
+}
+
+.c-card--compact .c-card__title {
+  font-size: var(--text-base);
+}

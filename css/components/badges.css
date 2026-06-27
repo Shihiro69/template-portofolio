@@ -1,0 +1,97 @@
+/* ============================================================
+   COMPONENT — Badge
+   Sprint 5: Reusable Components
+   ============================================================
+   Class: .c-badge
+   Desc:  Small inline status/label indicator. Supports
+          color variants, sizes, and outline style.
+   ============================================================ */
+
+/* ── Base Badge ── */
+.c-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-0-5) var(--space-2-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-tight);
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: var(--radius-badge);
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  border: var(--border-thin) solid transparent;
+}
+
+/* ── Color: Secondary ── */
+.c-badge--secondary {
+  background: var(--color-secondary);
+  color: var(--color-secondary-contrast);
+}
+
+/* ── Color: Accent ── */
+.c-badge--accent {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+/* ── Color: Outline (transparent with border) ── */
+.c-badge--outline {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-color: var(--color-surface-border);
+}
+
+.c-badge--outline.c-badge--primary {
+  color: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.c-badge--outline.c-badge--secondary {
+  color: var(--color-secondary-light);
+  border-color: var(--color-secondary);
+}
+
+.c-badge--outline.c-badge--accent {
+  color: var(--color-accent-light);
+  border-color: var(--color-accent);
+}
+
+/* ── Color: Subtle ── */
+.c-badge--subtle {
+  background: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.12);
+  color: var(--color-primary-light);
+}
+
+.c-badge--subtle.c-badge--secondary {
+  background: hsla(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l), 0.12);
+  color: var(--color-secondary-light);
+}
+
+.c-badge--subtle.c-badge--accent {
+  background: hsla(var(--color-accent-h), var(--color-accent-s), var(--color-accent-l), 0.12);
+  color: var(--color-accent-light);
+}
+
+/* ── Size: Small ── */
+.c-badge--sm {
+  padding: var(--space-px) var(--space-1-5);
+  font-size: 0.6875rem;
+}
+
+/* ── Size: Large ── */
+.c-badge--lg {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+/* ── Dot indicator (before text) ── */
+.c-badge__dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: var(--radius-full);
+  background: currentColor;
+}
