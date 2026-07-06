@@ -50,6 +50,6 @@
 @import "./base/responsive.css";
 
 /* ── Layer 5: Future imports ── */
-/* @import "./themes/light.css"; */
+@import "./themes/light.css";
 /* @import "./themes/dark.css"; */
 /* ... */
