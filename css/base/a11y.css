@@ -85,6 +85,31 @@
   .c-scroll-progress__fill {
     background: Highlight;
   }
+
+  /* Glass cards — remove backdrop blur in high contrast */
+  .c-card--glass,
+  .glass,
+  .glass--strong,
+  .glass--light {
+    background: Canvas;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* Gradient text — show in solid color */
+  .text-gradient,
+  .text-gradient--accent,
+  .hero__heading {
+    -webkit-text-fill-color: CanvasText;
+    background: none;
+  }
+
+  /* Orbs — hide decorative elements */
+  .orb,
+  .hero__bg-orbs,
+  .hero__grid-dots {
+    display: none;
+  }
 }
 
 /* ── Print styles ── */

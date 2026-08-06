@@ -26,6 +26,23 @@
 .social__link {
   text-align: center;
   transition: var(--transition-card-hover);
+  border: var(--border-thin) solid var(--glass-border);
+  background: var(--glass-bg-light);
+  backdrop-filter: blur(var(--glass-blur-light));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light));
+}
+
+.social__link:hover {
+  background: var(--glass-bg-strong);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glow-card-hover);
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social__link:hover {
+    transform: none;
+  }
 }
 
 .social__link .c-card__body {

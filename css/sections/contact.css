@@ -26,12 +26,27 @@
   font-weight: var(--weight-semibold);
   color: var(--color-primary-light);
   transition: color var(--duration-fast) var(--ease-default);
+  position: relative;
+}
+
+.contact__email::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--duration-normal) var(--ease-default);
 }
 
 .contact__email:hover {
   color: var(--color-primary);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+}
+
+.contact__email:hover::after {
+  width: 100%;
 }
 
 /* ── Location ── */

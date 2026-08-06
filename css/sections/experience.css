@@ -15,7 +15,7 @@
   gap: var(--space-0);
 }
 
-/* Vertical line */
+/* Vertical line — gradient */
 .experience__timeline::before {
   content: "";
   position: absolute;
@@ -23,7 +23,12 @@
   top: 8px;
   bottom: 8px;
   width: 2px;
-  background: var(--color-surface-border);
+  background: linear-gradient(
+    180deg,
+    var(--color-primary),
+    var(--color-secondary) 50%,
+    var(--color-accent) 100%
+  );
   border-radius: var(--radius-full);
 }
 
@@ -55,6 +60,12 @@
   border: 3px solid var(--color-background);
   box-shadow: 0 0 0 2px var(--color-primary);
   flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .experience__entry:hover .experience__dot {
+    animation: pulseGlow 2s ease-out infinite;
+  }
 }
 
 /* ── Body ── */

@@ -1,6 +1,6 @@
 /* ============================================================
    SECTION — Projects
-   Sprint 6: Portfolio Sections
+   Phase 4: Enhanced with bento grid & glass
    ============================================================ */
 
 #section-projects {
@@ -14,9 +14,58 @@
   max-width: var(--container-text);
 }
 
-/* ── Card grid ── */
+/* ── Bento grid ── */
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
   gap: var(--space-6);
+}
+
+/* Featured projects span 2 columns (bento layout) */
+.projects__item--featured {
+  grid-column: span 2;
+}
+
+/* ── Project card image overlay ── */
+.projects__image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.projects__image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    hsla(var(--color-background-h), var(--color-background-s), var(--color-background-l), 0.85) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-default);
+}
+
+.projects__image-wrapper:hover .projects__image-overlay {
+  opacity: 1;
+}
+
+.projects__overlay-text {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-thin) solid var(--color-primary);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  background: hsla(var(--color-surface-h), var(--color-surface-s), var(--color-surface-l), 0.5);
+}
+
+/* ── Mobile: featured falls back to single column ── */
+@media (max-width: 767px) {
+  .projects__item--featured {
+    grid-column: span 1;
+  }
 }

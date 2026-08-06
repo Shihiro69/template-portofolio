@@ -1,0 +1,84 @@
+/* ============================================================
+   SCROLL REVEAL STYLES
+   Phase 2: Universal Scroll Animations
+   ============================================================
+   Purpose: CSS styles for the scroll reveal system.
+            Works with the animate-on-scroll class added by
+            renderer-helper.js and controlled by animate.js.
+   ============================================================ */
+
+/* ═══════════════════════════════════════════════
+   HIDDEN STATE — elements before scroll reveal
+   ═══════════════════════════════════════════════ */
+
+.animate-on-scroll > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--animate-fade-duration) var(--animate-easing),
+    transform var(--animate-slide-duration) var(--animate-easing);
+}
+
+/* Default stagger — overridden by JS inline style */
+.animate-on-scroll > * {
+  transition-delay: calc(var(--stagger-index, 0) * var(--animate-stagger-base, 80ms));
+}
+
+/* ═══════════════════════════════════════════════
+   VISIBLE STATE — triggered by IntersectionObserver
+   ═══════════════════════════════════════════════ */
+
+.animate-on-scroll.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════
+   ANIMATION VARIANTS
+   Add these as additional classes for different reveals
+   ═══════════════════════════════════════════════ */
+
+/* Fade only — no translation */
+.animate-on-scroll--fade > * {
+  transform: none;
+}
+
+/* Slide from left */
+.animate-on-scroll--left > * {
+  transform: translateX(-32px);
+}
+
+.animate-on-scroll--left.is-visible > * {
+  transform: translateX(0);
+}
+
+/* Slide from right */
+.animate-on-scroll--right > * {
+  transform: translateX(32px);
+}
+
+.animate-on-scroll--right.is-visible > * {
+  transform: translateX(0);
+}
+
+/* Scale in */
+.animate-on-scroll--scale > * {
+  transform: scale(0.94);
+}
+
+.animate-on-scroll--scale.is-visible > * {
+  transform: scale(1);
+}
+
+/* ═══════════════════════════════════════════════
+   REDUCED MOTION — show all content immediately
+   ═══════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0ms;
+  }
+}

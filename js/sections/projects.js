@@ -1,6 +1,6 @@
 /* ============================================================
    SECTION RENDERER — Projects
-   Sprint 10: Optimized
+   Phase 4: Enhanced with bento grid & glass
    ============================================================ */
 
 "use strict";
@@ -19,8 +19,12 @@ function renderProjects(data, container) {
   const grid = createElement("div", { class: "projects__grid" });
 
   items.forEach(project => {
+    /* Determine variants */
+    const variants = ["glass"];
+    if (project.featured) variants.push("elevated");
+
     const card = createCard({
-      variant: project.featured ? "elevated" : "",
+      variant: variants.join(" "),
       image: project.image ? {
         src: project.image,
         alt: project.imageAlt || project.title,
@@ -36,7 +40,14 @@ function renderProjects(data, container) {
       ]
     });
 
-    grid.appendChild(card);
+    /* Wrap featured cards for bento grid span */
+    if (project.featured) {
+      const wrapper = createElement("div", { class: "projects__item--featured" });
+      wrapper.appendChild(card);
+      grid.appendChild(wrapper);
+    } else {
+      grid.appendChild(card);
+    }
   });
 
   content.appendChild(grid);

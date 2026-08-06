@@ -1,0 +1,207 @@
+/* ============================================================
+   KEYFRAME ANIMATIONS LIBRARY
+   Phase 0: Foundation
+   ============================================================
+   Purpose: Pure CSS @keyframes for all animations.
+            No JavaScript required for these to work.
+            All wrapped in prefers-reduced-motion guard.
+   ============================================================ */
+
+/* ═══════════════════════════════════════════════
+   FADE + SLIDE COMBOS
+   ═══════════════════════════════════════════════ */
+
+/* Fade in from below — primary scroll reveal */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from above */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   SCALE ANIMATIONS
+   ═══════════════════════════════════════════════ */
+
+/* Smooth scale in */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scale in with spring bounce */
+@keyframes scaleInBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   SHIMMER — animated gradient sweep for buttons
+   ═══════════════════════════════════════════════ */
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   FLOAT — gentle vertical oscillation
+   ═══════════════════════════════════════════════ */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   PULSE GLOW — glowing ring expansion
+   ═══════════════════════════════════════════════ */
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   MORPH BLOB — animated border-radius shapes
+   ═══════════════════════════════════════════════ */
+
+@keyframes morphBlob {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 40% 60% 50% 50% / 40% 40% 60% 60%;
+  }
+  75% {
+    border-radius: 60% 40% 40% 60% / 60% 50% 50% 40%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   GRADIENT SHIFT — animated gradient background
+   ═══════════════════════════════════════════════ */
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   STATUS PULSE — breathing dot animation
+   ═══════════════════════════════════════════════ */
+
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   REDUCED MOTION — disable all animations
+   ═══════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

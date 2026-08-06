@@ -23,6 +23,18 @@ import { createButton } from "../components/button.js";
 
 function renderHero(data, container) {
 
+  /* ── Background orbs (CSS-only animation, always visible) ── */
+  const bgOrbs = createElement("div", { class: "hero__bg-orbs" },
+    createElement("div", { class: "hero__orb hero__orb--1" }),
+    createElement("div", { class: "hero__orb hero__orb--2" }),
+    createElement("div", { class: "hero__orb hero__orb--3" })
+  );
+  container.appendChild(bgOrbs);
+
+  /* ── Subtle dot grid overlay ── */
+  const gridDots = createElement("div", { class: "hero__grid-dots" });
+  container.appendChild(gridDots);
+
   /* ── Build outer wrapper ── */
   const wrapper = createElement("div", { class: "hero-wrapper" });
 
@@ -123,6 +135,32 @@ function renderHero(data, container) {
   }
 
   container.appendChild(wrapper);
+
+  /* ── JS Enhancement: Mouse parallax on orbs ── */
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const heroSection = document.getElementById("section-hero");
+    const orbs = container.querySelectorAll(".hero__orb");
+
+    if (heroSection && orbs.length) {
+      heroSection.addEventListener("mousemove", (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        orbs.forEach((orb, i) => {
+          const factor = (i + 1) * 15;
+          orb.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+        });
+      });
+
+      /* Reset on mouse leave */
+      heroSection.addEventListener("mouseleave", () => {
+        orbs.forEach(orb => {
+          orb.style.transform = "translate(0, 0)";
+        });
+      });
+    }
+  }
 }
 
 export { renderHero };

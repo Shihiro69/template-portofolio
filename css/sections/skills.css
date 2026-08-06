@@ -60,6 +60,7 @@
   font-size: var(--text-xs);
   font-weight: var(--weight-semibold);
   color: var(--color-primary-light);
+  transition: color var(--duration-normal) var(--ease-default);
 }
 
 /* ── Progress bar ── */
@@ -73,7 +74,28 @@
 
 .skills__bar-fill {
   height: 100%;
+  width: 0;                       /* start from 0 */
   background: var(--gradient-primary);
+  background-size: 200% 200%;
   border-radius: var(--radius-full);
-  transition: width var(--duration-slower) var(--ease-smooth);
+  transition: width 1s var(--ease-default) var(--stagger-index, 0) * 80ms;
+}
+
+/* When section becomes visible via scroll reveal */
+.animate-on-scroll.is-visible .skills__bar-fill {
+  width: var(--bar-width, 0%);    /* set by inline style fallback */
+}
+
+/* ── Category card — glass wrapper ── */
+#section-skills .c-card {
+  transition: var(--transition-card-hover);
+}
+
+#section-skills .c-card:hover .skills__item-level {
+  color: var(--color-accent);
+}
+
+/* ── Skill item hover enhancement ── */
+.skills__item:hover .skills__item-name {
+  color: var(--color-text-primary);
 }

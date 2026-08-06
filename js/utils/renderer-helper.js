@@ -26,6 +26,7 @@ function createSectionWrapper(config, cssClass = "") {
   const classes = [];
   if (cssClass) classes.push(cssClass);
   classes.push("l-section__content");
+  classes.push("animate-on-scroll");   // Universal scroll reveal — all sections get it free
 
   const content = createElement("div", { class: classes });
 

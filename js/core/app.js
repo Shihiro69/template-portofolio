@@ -16,6 +16,8 @@ import { sectionRegistry } from "../sections/section-registry.js";
 import { createElement, qs, render, batchAppend } from "../utils/dom.js";
 import { navigation } from "../components/navigation.js";
 import { scrollProgress } from "../components/scroll-progress.js";
+import { initScrollReveal, destroyScrollReveal } from "../utils/animate.js";
+import { initTheme } from "../components/theme-toggle.js";
 
 class App {
   constructor() {
@@ -43,6 +45,9 @@ class App {
     this._injectDesignTokens(portfolioData.meta);
     this._injectGoogleFonts(portfolioData.meta);
 
+    /* Initialize theme (light/dark) */
+    initTheme(portfolioData.meta?.theme || "dark");
+
     this._renderHeader(portfolioData.site);
     this._renderSections(portfolioData.sections);
     this._renderFooter(portfolioData.footer);
@@ -68,6 +73,7 @@ class App {
 
     navigation.destroy();
     scrollProgress.destroy();
+    destroyScrollReveal();
 
     // Clean up header scroll listener
     if (this._scrollHandler) {
@@ -141,6 +147,9 @@ class App {
 
     /* Navigation (scroll spy, smooth scroll, mobile menu) */
     navigation.init();
+
+    /* Scroll reveal animations (all sections) */
+    initScrollReveal();
 
     /* Sticky header shadow on scroll */
     this._setupHeaderScrollEffect();

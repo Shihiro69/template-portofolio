@@ -1,18 +1,84 @@
 /* ============================================================
-   RESPONSIVE OVERRIDES
-   Sprint 8: Responsive Design Optimization
+   RESPONSIVE DESIGN
+   Phase 7: Responsive Polish
    ============================================================
-   Strategy: Mobile-first. Base styles target ≤360px.
-   Each breakpoint adds enhancements for larger screens.
-   All queries use `min-width` for progressive enhancement.
-
-   Target Breakpoints:
-     360px  — Small phones  (base, no query needed)
-     768px  — Tablets
-     1024px — Small desktops
-     1440px — Standard desktops
-     1920px — Large desktops
+   Breakpoints:
+      < 480px   — Small phone
+      480–767px — Large phone
+      768–1023px — Tablet
+      1024–1279px — Small desktop
+      ≥ 1280px — Large desktop
+   Approach: Mobile-first — base styles are mobile, overrides for larger.
    ============================================================ */
+
+/* ═══════════════════════════════════════════════
+   MOBILE FIRST: Base styles (≤ 479px)
+   ============================================== */
+
+/* Reduce glass blur on mobile for performance */
+@media (max-width: 767px) {
+  .c-card--glass,
+  .glass,
+  .glass--strong,
+  .glass--light {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Reduce glass opacity for readability */
+  .c-card--glass {
+    background: hsla(var(--color-surface-h), var(--color-surface-s), var(--color-surface-l), 0.75);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   HERO ORBS — scale down on mobile
+   ═══════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .hero__orb--1 {
+    width: 250px;
+    height: 250px;
+    top: -10%;
+    left: -15%;
+    filter: blur(50px);
+    opacity: 0.2;
+  }
+
+  .hero__orb--2 {
+    width: 200px;
+    height: 200px;
+    bottom: -8%;
+    right: -10%;
+    filter: blur(50px);
+    opacity: 0.2;
+  }
+
+  .hero__orb--3 {
+    display: none;  /* hide third orb on mobile */
+  }
+
+  /* Reduce hero image glow on mobile */
+  .hero__image img {
+    box-shadow:
+      0 0 40px hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.15),
+      var(--shadow-md);
+  }
+
+  /* Reduce dot grid density */
+  .hero__grid-dots {
+    background-size: 48px 48px;
+    opacity: 0.04;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   BENTO GRID — featured falls to single column
+   ═══════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .projects__item--featured {
+    grid-column: span 1;
+  }
+}
 
 /* ════════════════════════════════════════════════════════
    BREAKPOINT: ≥480px (Large Phones)

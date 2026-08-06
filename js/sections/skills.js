@@ -40,7 +40,10 @@ function renderSkills(data, container) {
       bar.appendChild(
         createElement("div", {
           class: "skills__bar-fill",
-          style: { width: skill.level + "%" },
+          style: {
+            width: "0%",
+            "--bar-width": skill.level + "%"
+          },
           role: "progressbar",
           "aria-valuenow": skill.level,
           "aria-valuemin": "0",

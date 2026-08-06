@@ -17,6 +17,9 @@
 @import "./base/reset.css";
 @import "./base/variables.css";
 @import "./base/typography.css";
+@import "./base/animations.css";
+@import "./base/effects.css";
+@import "./base/reveal.css";
 @import "./base/a11y.css";
 
 /* ── Layer 1: Layout (depends on variables.css) ── */
@@ -49,7 +52,5 @@
 /* ── Layer 4: Responsive overrides (MUST load last) ── */
 @import "./base/responsive.css";
 
-/* ── Layer 5: Future imports ── */
-/* @import "./themes/light.css"; */
-/* @import "./themes/dark.css"; */
-/* ... */
+/* ── Layer 5: Themes ── */
+@import "./themes/light.css";

@@ -60,5 +60,20 @@
   width: 6px;
   height: 6px;
   border-radius: var(--radius-full);
-  background: var(--color-accent);
+  background: var(--gradient-primary);
+}
+
+/* ── Education card glass variant ── */
+.education__card {
+  border: var(--border-thin) solid var(--glass-border);
+  background: var(--glass-bg-light);
+  backdrop-filter: blur(var(--glass-blur-light));
+  -webkit-backdrop-filter: blur(var(--glass-blur-light));
+  border-radius: var(--radius-card);
+  padding: var(--space-6);
+}
+
+.education__card:hover {
+  border-color: var(--glass-border-hover);
+  background: var(--glass-bg);
 }
