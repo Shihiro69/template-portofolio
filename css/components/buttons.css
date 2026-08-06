@@ -221,6 +221,25 @@
   width: 100%;
 }
 
+/* ── Size Modifiers ── */
+.c-btn--lg {
+  padding: var(--space-4) var(--space-8);    /* 16px 32px */
+  font-size: var(--text-base);               /* 16px */
+  min-height: 48px;                          /* accessible touch target */
+}
+
+.c-btn--sm {
+  padding: var(--space-1-5) var(--space-3);  /* 6px 12px */
+  font-size: var(--text-xs);                 /* 12px */
+  min-height: 32px;
+}
+
+.c-btn--icon {
+  width: 40px;
+  height: 40px;
+  padding: var(--space-2);                   /* 8px */
+}
+
 /* ── Loading State (placeholder for JS) ── */
 .c-btn--loading {
   position: relative;

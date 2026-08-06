@@ -57,10 +57,11 @@
   height: 20px;
 }
 
-/* Mobile: theme toggle stays in header bar */
+/* Mobile: theme toggle stays next to hamburger, grouped tight */
 @media (max-width: 767px) {
   .c-theme-toggle {
-    margin-left: var(--space-2);
+    margin-left: auto;            /* push to right edge */
+    margin-right: var(--space-1); /* tight 4px gap to hamburger */
   }
 }
 
