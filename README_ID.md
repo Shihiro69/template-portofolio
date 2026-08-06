@@ -1290,6 +1290,41 @@ git push origin main
 
 ---
 
+# Log Perubahan
+
+### v2.2 — Agustus 2026
+
+- **Diperbaiki**: CSS hilang untuk kelas ukuran tombol (`c-btn--lg`, `c-btn--sm`, `c-btn--icon`). Tombol CTA hero kini berukuran tepat dengan target sentuh 48px.
+- **Diperbaiki**: Jarak visual antara tombol tema dan hamburger di header mobile. Kontrol kini rapat (gap 4px).
+
+### v2.1 — Agustus 2026
+
+- **Diperbaiki**: Anchor internal CTA hero kini menargetkan ID `#section-*` yang benar, bukan `#*` polos.
+- **Diperbaiki**: Container bagian kosong (dari bagian yang dihapus di `data.js`) kini disembunyikan dengan `display:none` + `aria-hidden`.
+- **Diperbaiki**: Latar belakang bergantian kini menggunakan indeks array stabil — ritme visual tetap terjaga meskipun bagian tengah dihapus.
+
+### v2.0 — Agustus 2026
+
+- **Baru**: Desain glassmorphism — kartu kaca buram, orbs gradien, backdrop blur.
+- **Baru**: Animasi scroll reveal — bagian menganimasi masuk saat Anda scroll.
+- **Baru**: Toggle tema Gelap/Terang dengan deteksi preferensi sistem.
+- **Baru**: Bagian hero premium dengan orbs gradien animasi, overlay dot grid, dan efek parallax.
+- **Baru**: Scroll progress bar.
+- **Baru**: 10 tipe bagian lengkap: hero, about, skills, experience, projects, achievements, education, certificates, contact, social.
+- **Baru**: Menu hamburger mobile dengan focus trap dan navigasi keyboard.
+- **Baru**: Gaya cetak (print) dan dukungan mode `forced-colors`.
+
+### v1.0 — Rilis Awal
+
+- Mesin template inti dengan `data.js` sebagai sumber data tunggal.
+- Pola Section Registry untuk rendering bagian yang dapat diperluas.
+- Pabrik komponen (button, card, badge, chip, tag, section-title).
+- Arsitektur tanpa dependensi.
+
+<br>
+
+---
+
 # Kontribusi
 
 Kontribusi diterima! Proyek ini bertujuan tetap **tanpa dependensi** dan **ramah pemula**.

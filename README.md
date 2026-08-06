@@ -1701,6 +1701,41 @@ janesmith.dev
 
 ---
 
+# Changelog
+
+### v2.2 — August 2026
+
+- **Fixed**: Missing CSS for button size classes (`c-btn--lg`, `c-btn--sm`, `c-btn--icon`). Hero CTAs now properly sized at 48px touch target.
+- **Fixed**: Visual gap between theme toggle and hamburger button on mobile header. Controls now grouped tight (4px gap).
+
+### v2.1 — August 2026
+
+- **Fixed**: Hero CTA internal anchors now correctly target `#section-*` IDs instead of bare `#*`.
+- **Fixed**: Empty section containers (from removed sections in `data.js`) now hidden with `display:none` + `aria-hidden`.
+- **Fixed**: Alternating section backgrounds now use stable array index — visual rhythm preserved even when middle sections are removed.
+
+### v2.0 — August 2026
+
+- **Added**: Glassmorphism design — frosted glass cards, gradient orbs, backdrop blur.
+- **Added**: Scroll reveal animations — sections animate in as you scroll.
+- **Added**: Dark/Light theme toggle with system preference detection.
+- **Added**: Premium hero section with animated gradient orbs, dot grid overlay, and parallax effect.
+- **Added**: Scroll progress bar.
+- **Added**: 10 complete section types: hero, about, skills, experience, projects, achievements, education, certificates, contact, social.
+- **Added**: Mobile hamburger menu with focus trap and keyboard navigation.
+- **Added**: Print styles and `forced-colors` mode support.
+
+### v1.0 — Initial Release
+
+- Core template engine with `data.js` single source of truth.
+- Section Registry pattern for extensible section rendering.
+- Component factories (button, card, badge, chip, tag, section-title).
+- Zero-dependency architecture.
+
+<br>
+
+---
+
 # Contributing
 
 Contributions are welcome! This project aims to remain **zero-dependency** and **beginner-friendly**.
