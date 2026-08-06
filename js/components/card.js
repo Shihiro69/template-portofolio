@@ -43,7 +43,11 @@ function createCard(options = {}) {
   } = options;
 
   const classes = ["c-card"];
-  if (variant) classes.push("c-card--" + variant);
+  if (variant) {
+    variant.split(" ").forEach(v => {
+      if (v) classes.push("c-card--" + v);
+    });
+  }
 
   const cardAttrs = { ...attrs, class: classes };
   if (tag === "a" && href) {

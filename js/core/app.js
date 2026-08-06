@@ -222,6 +222,7 @@ class App {
     if (!sections || !sections.length) return;
 
     let visibleIndex = 0;
+    const renderedIds = new Set();
 
     sections.forEach(config => {
       if (config.visible === false) return;
@@ -240,8 +241,10 @@ class App {
         return;
       }
 
-      /* Alternate section backgrounds for visual rhythm */
-      if (visibleIndex % 2 === 1) {
+      /* Alternate section backgrounds using original array position
+         so visual rhythm stays consistent even when middle sections are removed */
+      const stableIndex = sections.indexOf(config);
+      if (stableIndex % 2 === 1) {
         container.classList.add("l-section--alt");
       }
 
@@ -252,6 +255,17 @@ class App {
       }
 
       visibleIndex++;
+      renderedIds.add(config.id);
+    });
+
+    /* Hide empty section containers for sections not in data.js or visible:false */
+    document.querySelectorAll("[id$='-container']").forEach(container => {
+      const sectionId = container.id.replace("-container", "");
+      const sectionEl = container.closest("section[id^='section-']");
+      if (sectionEl && !renderedIds.has(sectionId)) {
+        sectionEl.style.display = "none";
+        sectionEl.setAttribute("aria-hidden", "true");
+      }
     });
   }
 

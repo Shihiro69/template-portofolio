@@ -112,7 +112,7 @@ function renderHero(data, container) {
       actions.appendChild(createButton({
         label: action.label,
         variant: action.variant,
-        href: "#" + action.target,
+        href: action.target.startsWith("http") ? action.target : "#section-" + action.target,
         size: "lg"
       }));
     });

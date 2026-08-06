@@ -28,6 +28,42 @@
   transform-origin: center;
 }
 
+/* ── Theme toggle (always visible) ── */
+.c-theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: var(--border-thin) solid var(--glass-border);
+  border-radius: var(--radius-base);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-default),
+              border-color var(--duration-fast) var(--ease-default),
+              background var(--duration-fast) var(--ease-default);
+  margin-left: auto;
+}
+
+.c-theme-toggle:hover {
+  color: var(--color-primary-light);
+  border-color: var(--glass-border-hover);
+  background: var(--glass-bg-light);
+}
+
+.c-theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Mobile: theme toggle stays in header bar */
+@media (max-width: 767px) {
+  .c-theme-toggle {
+    margin-left: var(--space-2);
+  }
+}
+
 /* Hamburger → X animation */
 .c-nav-toggle.is-active .c-nav-toggle__line--top {
   transform: translateY(7px) rotate(45deg);
