@@ -33,15 +33,21 @@
   --color-accent-contrast:      hsl(var(--color-accent-h), 15%, 8%);
 
   /* ═══ BACKGROUND ═══ */
-  --color-background:           hsl(240, 6%, 96%);
-  --color-background-alt:       hsl(240, 6%, 91%);
-  --color-background-raised:    hsl(240, 6%, 86%);
+  --color-background-h:           240;
+  --color-background-s:           6%;
+  --color-background-l:           96%;
+  --color-background:             hsl(var(--color-background-h), var(--color-background-s), var(--color-background-l));
+  --color-background-alt:         hsl(240, 6%, 91%);
+  --color-background-raised:      hsl(240, 6%, 86%);
 
   /* ═══ SURFACE ═══ */
-  --color-surface:              hsl(240, 5%, 100%);
-  --color-surface-hover:        hsl(240, 6%, 94%);
-  --color-surface-elevated:     hsl(240, 5%, 97%);
-  --color-surface-border:       hsl(240, 6%, 82%);
+  --color-surface-h:              240;
+  --color-surface-s:              5%;
+  --color-surface-l:              100%;
+  --color-surface:                hsl(var(--color-surface-h), var(--color-surface-s), var(--color-surface-l));
+  --color-surface-hover:          hsl(240, 6%, 94%);
+  --color-surface-elevated:       hsl(240, 5%, 97%);
+  --color-surface-border:         hsl(240, 6%, 82%);
 
   /* ═══ TEXT ═══ */
   --color-text-primary:         hsl(240, 8%, 10%);

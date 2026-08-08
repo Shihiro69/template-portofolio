@@ -32,15 +32,18 @@ const portfolioData = {
 
     /* ── Design Tokens — change colors and fonts here ── */
     design: {
-      /* Primary color — buttons, links, headings, focus outlines */
-      primary: { h: 240, s: 80, l: 60 },   // Indigo Blue
-      /* Secondary color — badges, decorative elements */
-      secondary: { h: 175, s: 70, l: 48 },   // Teal / Cyan
-      /* Accent color — highlights, hero stats, special badges, tag colors */
-      accent: { h: 40, s: 95, l: 55 },   // Amber / Warm Gold
-      /* Fonts — heading and body families */
-      fontHeading: "\"Outfit\", \"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
-      fontBody: "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"
+      /* Primary — bold crimson red */
+      primary: { h: 0, s: 85, l: 50 },
+
+      /* Secondary — clean medium red */
+      secondary: { h: 4, s: 70, l: 52 },
+
+      /* Accent — warm red-orange for highlights */
+      accent: { h: 8, s: 82, l: 54 },
+
+      /* Fonts */
+      fontHeading: "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+      fontBody: "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
     }
   },
 
@@ -77,10 +80,10 @@ const portfolioData = {
       id: "hero",
       type: "hero",
       visible: true,
-      heading: "Hi, I'm Yukitsune",
+      heading: "Hi, I'm Aldi",
       data: {
-        role:        "Portfolio Template",
-        tagline:     "A modern, accessible, and performant portfolio template — built with vanilla HTML, CSS, and JavaScript.",
+        role: "Portfolio Template",
+        tagline: "A modern, accessible, and performant portfolio template — built with vanilla HTML, CSS, and JavaScript.",
         image: "/assets/images/profile/avatar.svg",
         imageAlt: "Portrait of Yukitsune .corp",
         actions: [
@@ -105,7 +108,7 @@ const portfolioData = {
         image: "/assets/images/profile/about.svg",
         imageAlt: "Alex working at a desk setup",
         description: [
-          "I'm a front-end engineer with over eight years of experience building interfaces that are as functional as they are beautiful. I specialize in design systems, component architecture, and performance optimization.",
+          "Test",
           "My approach combines deep technical knowledge with an eye for detail. I believe great software starts with great foundations — semantic HTML, thoughtful CSS architecture, and clean, maintainable JavaScript.",
           "When I'm not coding, you'll find me contributing to open-source projects, writing about web performance, or exploring the latest in browser APIs."
         ],
